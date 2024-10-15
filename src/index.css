@@ -196,3 +196,34 @@ SPACING SYSTEM (px)
 FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
 */
+
+/* Challenge-1 */
+
+.profile-card {
+  max-width: 300px;
+  border: 2px solid #333;
+}
+
+.profile-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.main-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.skills {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+button.skill {
+  border: none;
+  padding: 0.5rem 0.75rem;
+  color: white;
+}

@@ -1,3 +1,4 @@
+import ProfileCard from './components/Challenge-profile-card'
 import pizzaData from './data'
 
 export default function App() {
@@ -6,6 +7,8 @@ export default function App() {
       <Header />
       <Menu />
       <Footer />
+
+      <ProfileCard />
     </section>
   )
 }
@@ -28,15 +31,16 @@ function Menu() {
   )
 }
 
-function Pizza() {
+function Pizza({ name, ingredients, photoName, soldOut, price }) {
   return (
     <article className="pizza">
       <img
-        src="./pizzas/salamino.jpg"
-        alt="pizza salamino"
+        src={photoName}
+        alt={name}
       />
-      <h3>Pizza Salamino</h3>
-      <p>Tomato, mozarella, and pepperoni</p>
+      <h3>{name}</h3>
+      <p>{ingredients}</p>
+      <h4>Price $ {price}</h4>
     </article>
   )
 }
