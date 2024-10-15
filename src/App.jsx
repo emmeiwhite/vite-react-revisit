@@ -5,6 +5,14 @@ export default function App() {
     <section className="app">
       <Header />
 
+      {pizzaData.map(pizza => {
+        return (
+          <Pizza
+            key={pizza.name}
+            {...pizza}
+          />
+        )
+      })}
       <Pizza />
 
       <Footer />
