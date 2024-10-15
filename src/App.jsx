@@ -2,7 +2,7 @@ import pizzaData from './data'
 
 export default function App() {
   return (
-    <section className="app">
+    <section className="container">
       <Header />
       <Menu />
       <Footer />
@@ -12,22 +12,25 @@ export default function App() {
 
 function Menu() {
   return (
-    <section className="menu">
-      {pizzaData.map(pizza => {
-        return (
-          <Pizza
-            key={pizza.name}
-            {...pizza}
-          />
-        )
-      })}
-    </section>
+    <main className="menu">
+      <h2>Our Menu</h2>
+      <div className="pizzas">
+        {pizzaData.map(pizza => {
+          return (
+            <Pizza
+              key={pizza.name}
+              {...pizza}
+            />
+          )
+        })}
+      </div>
+    </main>
   )
 }
 
 function Pizza() {
   return (
-    <article>
+    <article className="pizza">
       <img
         src="./pizzas/salamino.jpg"
         alt="pizza salamino"
@@ -39,7 +42,11 @@ function Pizza() {
 }
 
 function Header() {
-  return <h1>Fast React Pizza Co.</h1>
+  return (
+    <header className="header">
+      <h1>Fast React Pizza Co.</h1>
+    </header>
+  )
 }
 
 function Footer() {
@@ -57,5 +64,9 @@ function Footer() {
   } else {
     console.log('Sorry, we are closed and we serve at 12:00 clock')
   }
-  return <p>{new Date().toLocaleTimeString()} We are currently open!</p>
+  return (
+    <footer className="footer">
+      <p>{new Date().toLocaleTimeString()} We are currently open!</p>
+    </footer>
+  )
 }
