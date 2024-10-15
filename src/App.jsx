@@ -8,6 +8,7 @@ export default function App() {
       <Menu />
       <Footer />
 
+      {/* Challenges Here! */}
       <ProfileCard />
     </section>
   )
@@ -33,7 +34,7 @@ function Menu() {
 
 function Pizza({ name, ingredients, photoName, soldOut, price }) {
   return (
-    <article className="pizza">
+    <article className={`pizza ${soldOut && 'sold-out'}`}>
       <img
         src={photoName}
         alt={name}
@@ -41,6 +42,8 @@ function Pizza({ name, ingredients, photoName, soldOut, price }) {
       <h3>{name}</h3>
       <p>{ingredients}</p>
       <h4>Price $ {price}</h4>
+
+      <h5>{soldOut ? 'Sold Out' : 'Available'}</h5>
     </article>
   )
 }
