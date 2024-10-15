@@ -268,6 +268,6 @@ button.skill {
 }
 
 .step.active {
-  background-color: rgb(64, 64, 193);
+  background-color: #7950f2;
   color: white;
 }
