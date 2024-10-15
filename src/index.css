@@ -284,3 +284,21 @@ button.skill {
   cursor: pointer;
   font-weight: 700;
 }
+
+/* 3. Challenge 2: Counter.js */
+.counter-wrapper {
+  text-align: center;
+}
+
+.counter-wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.counter {
+  display: flex;
+  gap: 2rem;
+}
+
+.count {
+  font-size: 3rem;
+}

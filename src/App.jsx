@@ -1,4 +1,6 @@
 import ProfileCard from './components/Challenge-profile-card'
+import Counter from './components/Counter'
+
 import StepsApp from './components/Steps-App'
 import pizzaData from './data'
 
@@ -15,6 +17,10 @@ export default function App() {
 
       {/* Challenge 2: State & UI */}
       <StepsApp />
+
+      {/* Challenge 3: Counter  */}
+
+      <Counter />
     </section>
   )
 }

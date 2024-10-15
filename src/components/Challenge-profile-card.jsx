@@ -56,7 +56,7 @@ export default function ProfileCard() {
           {skills.map(skill => (
             <Skill
               {...skill}
-              key={skill.key}
+              key={skill.id}
             />
           ))}
         </section>
