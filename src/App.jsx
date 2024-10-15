@@ -1,4 +1,5 @@
 import ProfileCard from './components/Challenge-profile-card'
+import StepsApp from './components/Steps-App'
 import pizzaData from './data'
 
 export default function App() {
@@ -9,7 +10,11 @@ export default function App() {
       <Footer />
 
       {/* Challenges Here! */}
+
       <ProfileCard />
+
+      {/* Challenge 2: State & UI */}
+      <StepsApp />
     </section>
   )
 }

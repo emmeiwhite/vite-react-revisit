@@ -52,6 +52,15 @@ body {
   display: block;
 }
 
+button {
+  padding: 0.75rem 1rem;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  border: none;
+  min-width: 120px;
+}
+
 .header h1::before,
 .header h1::after {
   display: block;
@@ -197,7 +206,7 @@ FONT SIZE SYSTEM (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 /52 / 62 / 74 / 86 / 98
 */
 
-/* Challenge-1 */
+/* Profile Card: Challenge-1 */
 
 .profile-card {
   max-width: 300px;
@@ -225,5 +234,40 @@ FONT SIZE SYSTEM (px)
 button.skill {
   border: none;
   padding: 0.5rem 0.75rem;
+  color: white;
+}
+
+/* 2. Step App */
+.steps-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  text-align: center;
+}
+.steps-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.step {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.step.active {
+  background-color: rgb(64, 64, 193);
   color: white;
 }
