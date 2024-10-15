@@ -24,6 +24,7 @@ function Menu() {
     </section>
   )
 }
+
 function Pizza() {
   return (
     <article>
@@ -42,5 +43,19 @@ function Header() {
 }
 
 function Footer() {
+  // Let's write some JavaScript within this function
+  let hour = new Date().getHours()
+  let openHour = 11
+  let closeHour = 22
+
+  let isOpen = hour >= openHour && hour <= closeHour
+
+  console.log(isOpen)
+
+  if (isOpen) {
+    console.log('Restaurant is open to take orders!')
+  } else {
+    console.log('Sorry, we are closed and we serve at 12:00 clock')
+  }
   return <p>{new Date().toLocaleTimeString()} We are currently open!</p>
 }
