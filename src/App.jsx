@@ -4,7 +4,15 @@ export default function App() {
   return (
     <section className="app">
       <Header />
+      <Menu />
+      <Footer />
+    </section>
+  )
+}
 
+function Menu() {
+  return (
+    <section className="menu">
       {pizzaData.map(pizza => {
         return (
           <Pizza
@@ -13,13 +21,9 @@ export default function App() {
           />
         )
       })}
-      <Pizza />
-
-      <Footer />
     </section>
   )
 }
-
 function Pizza() {
   return (
     <article>
@@ -34,9 +38,9 @@ function Pizza() {
 }
 
 function Header() {
-  return <p>Header</p>
+  return <h1>Fast React Pizza Co.</h1>
 }
 
 function Footer() {
-  return <p>Footer</p>
+  return <p>{new Date().toLocaleTimeString()} We are currently open!</p>
 }
