@@ -238,6 +238,13 @@ button.skill {
 }
 
 /* 2. Step App */
+
+.steps-main {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 .steps-container {
   width: 100%;
   max-width: 400px;

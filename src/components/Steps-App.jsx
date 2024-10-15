@@ -19,7 +19,7 @@ export default function StepsApp() {
   }
 
   return (
-    <main>
+    <main className="steps-main">
       <div
         onClick={() => setIsOpen(!isOpen)}
         className="toggle"
