@@ -264,10 +264,16 @@ button.skill {
 
 .buttons-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .step.active {
   background-color: #7950f2;
   color: white;
+}
+
+.toggle {
+  font-size: 2.5rem;
+  cursor: pointer;
+  font-weight: 700;
 }
