@@ -55,7 +55,8 @@ li {
   display: block;
 }
 
-button {
+button,
+select {
   padding: 0.75rem 1rem;
   background-color: orange;
   color: white;
@@ -64,6 +65,13 @@ button {
   min-width: 120px;
 }
 
+input {
+  padding: 0.75rem 1rem;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
 .header h1::before,
 .header h1::after {
   display: block;
@@ -310,7 +318,8 @@ button.skill {
 
 .faraway-container {
   margin-top: 3rem;
-  min-height: 100vh;
+  min-height: 80vh;
+  overflow-y: auto;
   width: 100%;
   display: flex;
   flex-direction: column;

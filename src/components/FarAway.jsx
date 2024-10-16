@@ -2,23 +2,35 @@ import { useState } from 'react'
 
 export default function FarAwayApp() {
   // One Source of Truth!
-  const [lists, setLists] = useState([])
+  const [list, setList] = useState([])
 
   // we need data in the form so that we can add it to the lists
   // Simultaneously we need to pass the list down the component tree to be rendered in the UI
   // Because the UI is the reflection of current state! So this much happen immediately
   function getObject(object) {
     console.log(object)
+
+    setList([...list, object]) // We are updating state, As soon as state updates, React Re-renders the component
   }
+
+  function handleChecked(id) {
+    setList(prevItems =>
+      prevItems.map(item => (item.id === id ? { ...item, isPacked: !item.isPacked } : item))
+    )
+  }
+
   return (
     <section className="faraway-container">
       <FarAwayHeader />
 
       <FarAwayForm getObject={getObject} />
 
-      <FarAwayTravelList lists={lists} />
+      <FarAwayTravelList
+        list={list}
+        handleChecked={handleChecked}
+      />
 
-      <FarAwayStats lists={lists} />
+      <FarAwayStats list={list} />
     </section>
   )
 }
@@ -99,59 +111,56 @@ function FarAwayForm({ getObject }) {
   )
 }
 
-function FarAwayTravelList({ item = 'Become a Master of Coding' }) {
+function FarAwayTravelList({ list, handleChecked }) {
+  console.log(list)
   return (
     <section className="faraway-travel-list">
       <ul className="list-items">
-        {/* Single List item | From Object to UI (Thinking in React) */}
-        <li>
-          <input
-            type="checkbox"
-            name=""
-            id=""
+        {list.map(item => (
+          <Item
+            {...item}
+            key={item.id}
+            handleChecked={handleChecked}
           />
-
-          <span>{item}</span>
-
-          <span>❌</span>
-        </li>
-
-        {/* Single List item | From Object to UI (Thinking in React) */}
-        <li>
-          <input
-            type="checkbox"
-            name=""
-            id=""
-          />
-
-          <span>JavaScript Advanced{item}</span>
-
-          <span>❌</span>
-        </li>
-
-        {/* Single List item | From Object to UI (Thinking in React) */}
-        <li>
-          <input
-            type="checkbox"
-            name=""
-            id=""
-          />
-
-          <span>"Next.JS"{item}</span>
-
-          <span>❌</span>
-        </li>
+        ))}
       </ul>
     </section>
   )
 }
 
-function FarAwayStats({ itemCount = 3, totalItems = 6 }) {
-  const totalPercentage = (itemCount / totalItems) * 100
+//       const itemObj = {
+//     id: new Date().toISOString(),
+//     itemName: item,
+//     totalItems: itemCount,
+//     isPacked: false
+//   }
+
+function Item({ id, itemName, totalItems, isPacked, handleChecked }) {
+  return (
+    <li>
+      <input
+        type="checkbox"
+        checked={isPacked}
+        onChange={() => handleChecked(id)}
+      />
+
+      <span style={isPacked ? { textDecoration: 'line-through' } : { textDecoration: 'none' }}>
+        {totalItems} {itemName}
+      </span>
+
+      <span>❌</span>
+    </li>
+  )
+}
+
+function FarAwayStats({ list }) {
+  const totalItems = list.length
+  const totalChecked = list.filter(item => item.isPacked).length
+  const totalPercentage = ((totalChecked / totalItems) * 100).toFixed(2) || 0
   return (
     <div className="faraway-stats">
       <p>
-        You have {itemCount} items in the list & you area already {totalPercentage} % packed
+        You have {totalChecked} items in the list & you area already {totalPercentage} % packed
       </p>
     </div>
   )
