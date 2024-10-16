@@ -1,5 +1,6 @@
 import ProfileCard from './components/Challenge-profile-card'
 import Counter from './components/Counter'
+import FarAwayApp from './components/FarAway'
 
 import StepsApp from './components/Steps-App'
 import pizzaData from './data'
@@ -21,6 +22,9 @@ export default function App() {
       {/* Challenge 3: Counter  */}
 
       <Counter />
+
+      {/* Challenge 4: FarAway App */}
+      <FarAwayApp />
     </section>
   )
 }

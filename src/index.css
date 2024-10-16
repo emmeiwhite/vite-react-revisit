@@ -21,6 +21,9 @@ body {
   padding-bottom: 6rem;
 }
 
+li {
+  list-style-type: none;
+}
 .container {
   max-width: 80rem;
   margin: 0 auto;
@@ -301,4 +304,65 @@ button.skill {
 
 .count {
   font-size: 3rem;
+}
+
+/* Challenge 4: Far Away App [Form & List] */
+
+.faraway-container {
+  margin-top: 3rem;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.faraway-header {
+  padding: 2rem 0;
+  background-color: orange;
+  width: 100%;
+  text-align: center;
+}
+
+.faraway-heading {
+  font-size: 3rem;
+}
+
+.faraway-form {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.faraway-form-text {
+  font-size: 1.5rem;
+}
+
+.faraway-travel-list {
+  flex: 1;
+}
+
+.faraway-travel-list li span {
+  font-size: 1.25rem;
+}
+
+.list-items {
+  display: flex;
+  gap: 6rem;
+}
+
+.list-items li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.faraway-stats {
+  padding: 1rem 1.25rem;
+  display: grid;
+  place-content: center;
+  background-color: aquamarine;
+}
+
+.faraway-stats {
+  font-size: 1.5rem;
 }
